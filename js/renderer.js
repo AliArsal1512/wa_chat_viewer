@@ -73,6 +73,7 @@ export class MessageRenderer {
     if (!messages || messages.length === 0) return;
 
     let lastKey = null;
+    let prevSender = null;
     const frag = document.createDocumentFragment();
 
     messages.forEach((msg, idx) => {
@@ -80,6 +81,7 @@ export class MessageRenderer {
         const key = groupKey(msg.date);
         if (key !== lastKey) {
           lastKey = key;
+          prevSender = null; // reset on date separator
           const sepWrap = document.createElement('div');
           sepWrap.className = 'date-sep-wrap';
           sepWrap.id = `datesep-${key}`;
@@ -89,7 +91,9 @@ export class MessageRenderer {
         }
       }
 
-      const row = this.createMessageRow(msg, idx);
+      const senderChanged = !msg.isSystem && prevSender !== null && prevSender !== msg.sender;
+      const row = this.createMessageRow(msg, idx, senderChanged);
+      if (!msg.isSystem) prevSender = msg.sender;
       frag.appendChild(row);
     });
 
@@ -104,7 +108,7 @@ export class MessageRenderer {
     });
   }
 
-  createMessageRow(msg, idx) {
+  createMessageRow(msg, idx, senderChanged = false) {
     const row = document.createElement('div');
     row.id = `msgrow-${idx}`;
     const term = this.app.state.searchTerm;
@@ -116,7 +120,7 @@ export class MessageRenderer {
     }
 
     const isOut = this.app.state.meSender !== null && msg.sender === this.app.state.meSender;
-    row.className = `msg-row ${isOut ? 'out' : 'in'}`;
+    row.className = `msg-row ${isOut ? 'out' : 'in'}${senderChanged ? ' sender-change' : ''}`;
 
     const bubble = document.createElement('div');
     bubble.className = `bubble ${isOut ? 'out' : 'in'}`;

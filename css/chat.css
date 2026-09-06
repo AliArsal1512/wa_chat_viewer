@@ -402,6 +402,10 @@
   position: relative;
 }
 
+.msg-row.sender-change {
+  margin-top: 8px;
+}
+
 .msg-row.out {
   justify-content: flex-end;
 }
@@ -416,7 +420,7 @@
 }
 
 .bubble {
-  max-width: 68%;
+  max-width: 55%;
   padding: 5px 8px 6px 9px;
   border-radius: var(--radius-bubble);
   position: relative;
