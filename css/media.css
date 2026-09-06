@@ -1,0 +1,348 @@
+/**
+ * WhatsApp Chat Viewer - Media & Attachment Styles
+ */
+
+/* General Media Wrapper in Chat Bubble */
+.media-wrap {
+  margin: -5px -8px 4px -9px;
+  border-radius: 6px 6px 0 0;
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.media-wrap.is-standalone {
+  margin-bottom: -6px;
+  border-radius: 6px;
+}
+
+/* Image Media */
+.media-img-wrap {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.media-img-wrap img {
+  width: 100%;
+  max-width: 380px;
+  max-height: 420px;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-fast);
+}
+
+.media-img-wrap:hover img {
+  transform: scale(1.02);
+}
+
+.media-zoom-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity var(--transition-fast);
+}
+
+.media-img-wrap:hover .media-zoom-overlay {
+  opacity: 1;
+}
+
+.media-zoom-overlay svg {
+  width: 32px;
+  height: 32px;
+  color: #ffffff;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+}
+
+/* Video Media */
+.media-video-wrap {
+  position: relative;
+  max-width: 380px;
+  background: #000000;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.media-video-wrap video {
+  width: 100%;
+  max-height: 380px;
+  display: block;
+  outline: none;
+}
+
+/* Sticker / GIF */
+.media-sticker-wrap {
+  max-width: 160px;
+  padding: 4px;
+}
+
+.media-sticker-wrap img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* WhatsApp Voice Note / Audio Player */
+.wa-audio-player {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px;
+  min-width: 260px;
+  max-width: 340px;
+  background: var(--audio-bg);
+  border-radius: var(--radius-bubble);
+  margin-bottom: 4px;
+}
+
+.wa-audio-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.wa-audio-mic-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  background: #ffffff;
+  color: var(--accent-blue);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .wa-audio-mic-badge {
+  background: #202c33;
+}
+
+.wa-audio-mic-badge svg {
+  width: 11px;
+  height: 11px;
+}
+
+.wa-audio-controls {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.wa-audio-top-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wa-audio-play-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.wa-audio-play-btn:hover {
+  color: var(--text-primary);
+  transform: scale(1.1);
+}
+
+.wa-audio-play-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Custom Simulated Waveform / Progress Track */
+.wa-audio-waveform {
+  flex: 1;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  gap: 2.5px;
+  cursor: pointer;
+  position: relative;
+  padding: 2px 0;
+}
+
+.wa-wave-bar {
+  flex: 1;
+  background-color: var(--audio-waveform);
+  border-radius: 2px;
+  height: var(--bar-h, 12px);
+  min-height: 4px;
+  transition: background-color var(--transition-fast);
+}
+
+.wa-wave-bar.played {
+  background-color: var(--audio-progress);
+}
+
+.wa-audio-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11.5px;
+  color: var(--text-secondary);
+}
+
+.wa-audio-speed-btn {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+[data-theme="dark"] .wa-audio-speed-btn {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.wa-audio-speed-btn:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* Document / File Card Attachment */
+.file-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: rgba(0, 0, 0, 0.04);
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 6px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--border-subtle);
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  cursor: pointer;
+}
+
+[data-theme="dark"] .file-card {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.file-card:hover {
+  background-color: rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="dark"] .file-card:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.file-card .file-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background-color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #ffffff;
+}
+
+.file-card .file-icon.pdf { background-color: #f43f5e; }
+.file-card .file-icon.doc { background-color: #3b82f6; }
+.file-card .file-icon.zip { background-color: #eab308; }
+.file-card .file-icon.vcf { background-color: #8b5cf6; }
+
+.file-card .file-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.file-card .file-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.file-card .file-info b {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 240px;
+}
+
+.file-card .file-info span {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+}
+
+.file-card .file-download-icon {
+  color: var(--text-muted);
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Media Loading State */
+.media-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: var(--radius-sm);
+  gap: 10px;
+  color: var(--text-secondary);
+  font-size: 12.5px;
+}
+
+[data-theme="dark"] .media-loading {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Media Placeholder / Missing / Omitted */
+.media-placeholder {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: rgba(0, 0, 0, 0.035);
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 6px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  border: 1px dashed var(--divider);
+}
+
+[data-theme="dark"] .media-placeholder {
+  background-color: rgba(255, 255, 255, 0.035);
+}
+
+.media-placeholder svg {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  color: var(--accent);
+}

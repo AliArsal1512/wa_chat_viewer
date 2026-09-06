@@ -1,0 +1,112 @@
+/**
+ * WhatsApp Chat Viewer - Design Tokens & Variables
+ */
+:root {
+  /* WhatsApp Light Theme */
+  --app-bg: #f0f2f5;
+  --panel-bg: #ffffff;
+  --sidebar-bg: #ffffff;
+  --sidebar-hover: #f5f6f6;
+  --sidebar-active: #ebebeb;
+  --header-bg: #f0f2f5;
+  --header-text: #111b21;
+  --chat-bg: #efeae2;
+  --chat-pattern-opacity: 0.06;
+  
+  /* Message Bubbles */
+  --bubble-in: #ffffff;
+  --bubble-in-text: #111b21;
+  --bubble-out: #d9fdd3;
+  --bubble-out-text: #111b21;
+  --system-bubble: #ffffff;
+  --system-text: #54656f;
+  
+  /* Text & Accents */
+  --text-primary: #111b21;
+  --text-secondary: #667781;
+  --text-muted: #8696a0;
+  --accent: #00a884;
+  --accent-hover: #008f6f;
+  --accent-dark: #008069;
+  --accent-light: rgba(0, 168, 132, 0.12);
+  --accent-blue: #53bdeb;
+  --danger: #ea4335;
+  --warning: #f59e0b;
+  
+  /* UI Elements */
+  --divider: #e9edef;
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --input-bg: #ffffff;
+  --input-bar-bg: #f0f2f5;
+  --scrollbar: #c7cbcf;
+  --scrollbar-track: transparent;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.16);
+  --radius-sm: 6px;
+  --radius-bubble: 8px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  
+  /* Audio Player */
+  --audio-bg: #f0f2f5;
+  --audio-progress: #00a884;
+  --audio-waveform: #c1c7cb;
+  --audio-thumb: #00a884;
+  
+  /* Transitions */
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+  /* WhatsApp Dark Theme */
+  --app-bg: #0b141a;
+  --panel-bg: #111b21;
+  --sidebar-bg: #111b21;
+  --sidebar-hover: #202c33;
+  --sidebar-active: #2a3942;
+  --header-bg: #202c33;
+  --header-text: #e9edef;
+  --chat-bg: #0b141a;
+  --chat-pattern-opacity: 0.04;
+  
+  /* Message Bubbles */
+  --bubble-in: #202c33;
+  --bubble-in-text: #e9edef;
+  --bubble-out: #005c4b;
+  --bubble-out-text: #e9edef;
+  --system-bubble: #182229;
+  --system-text: #8696a0;
+  
+  /* Text & Accents */
+  --text-primary: #e9edef;
+  --text-secondary: #8696a0;
+  --text-muted: #667781;
+  --accent: #00a884;
+  --accent-hover: #02b690;
+  --accent-dark: #00a884;
+  --accent-light: rgba(0, 168, 132, 0.18);
+  --accent-blue: #53bdeb;
+  --danger: #ef4444;
+  --warning: #fbbf24;
+  
+  /* UI Elements */
+  --divider: #222e35;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --input-bg: #2a3942;
+  --input-bar-bg: #202c33;
+  --scrollbar: #3a4a53;
+  --scrollbar-track: transparent;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+  
+  /* Audio Player */
+  --audio-bg: #182229;
+  --audio-progress: #00a884;
+  --audio-waveform: #3b4a54;
+  --audio-thumb: #00a884;
+}

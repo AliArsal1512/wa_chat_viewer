@@ -1,0 +1,37 @@
+/**
+ * WhatsApp Chat Viewer - Main CSS Bundle
+ */
+@import "variables.css";
+@import "base.css";
+@import "sidebar.css";
+@import "chat.css";
+@import "media.css";
+@import "modal.css";
+@import "stats.css";
+@import "animations.css";
+
+/* Print Styles for Export */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    overflow: visible !important;
+  }
+  
+  .sidebar, .chat-header, .search-bar, .input-bar, .fab-bottom, .fab-top, .modal-overlay, .toast {
+    display: none !important;
+  }
+  
+  .app, .main, .messages-scroll {
+    height: auto !important;
+    overflow: visible !important;
+    display: block !important;
+    background: transparent !important;
+  }
+  
+  .bubble {
+    box-shadow: none !important;
+    border: 1px solid #cccccc !important;
+    page-break-inside: avoid;
+  }
+}
