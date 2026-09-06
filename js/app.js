@@ -179,7 +179,7 @@ class App {
     });
 
     document.getElementById('menuUploadNew')?.addEventListener('click', () => this.resetApp());
-    document.getElementById('newChatBtn')?.addEventListener('click', () => this.resetApp());
+    document.getElementById('newChatBtn')?.addEventListener('click', () => this.fileInput.click());
 
     // Scroll Floating Buttons
     this.messagesScroll.addEventListener('scroll', () => {

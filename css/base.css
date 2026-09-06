@@ -5,6 +5,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html, body {
@@ -52,6 +53,7 @@ button {
   background: none;
   outline: none;
   user-select: none;
+  touch-action: manipulation;
 }
 
 button:focus-visible {
